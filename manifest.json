@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Anti Dark Pattern Remover",
+  "description": "Removes common dark patterns such as cookie walls, GDPR nags, newsletter modals and blocking overlays, with per-site exclusions.",
+  "version": "1.1.0",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content-script.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "options_page": "options.html"
+}
